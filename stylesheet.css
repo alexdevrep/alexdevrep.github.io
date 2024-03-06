@@ -6,7 +6,7 @@
     margin:0%;
 }
 header{
-    background-color:  #6c02fc ;
+    background-color:  #9b51e0 ;
     display: grid;
     grid-template-columns: 20% 20% 20% 20% 20%;
     grid-template-rows: 100%;
@@ -19,11 +19,12 @@ header{
     display:flex;
     justify-content: center;
     align-items: center;
-    background-color: #6c02fc  ;
+    background-color: #9b51e0 ;
 }
 
 .Aboutme{
     height: 400px;
+    width: 90%;
     display: grid;
     grid-template-columns: 50% 50%;
     grid-template-rows: 50% 50%
@@ -48,19 +49,44 @@ input{
     height: 50px;
     width: 150px;
     border-radius: 20px;
-    background-color: #6c02fc;
-    border-color: #6c02fc;
+    background-color: #9b51e0;
+    border-color: #9b51e0;
 }
 
+
+
 .exp{
-    height: 100px;
+    height: 400px;
+    width: 90%;
+    display: grid;
+    grid-template-rows: 100%;
+    grid-template-columns: 50% 50%;
 }
-    
+
+.laboral{
+    display: flex;
+    justify-content: center;
+    align-items:center;
+
+}
+.skills{
+    height: 300px;
+    width: 90%;
+    display: grid;
+    grid-template-rows: 100% ;
+    grid-template-columns:50% 50% ;
+}
+.soft{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
 
 
 footer{
     height: 250px;
-    background-color: #6c02fc ;
+    background-color: #9b51e0 ;
 }
 
 
