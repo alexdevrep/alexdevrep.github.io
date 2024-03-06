@@ -60,8 +60,9 @@ input{
     width: 90%;
     display: grid;
     grid-template-rows: 100%;
-    grid-template-columns: 50% 50%;
+    grid-template-columns: 33% 33% 33%;
 }
+
 
 .laboral{
     display: flex;
@@ -70,16 +71,20 @@ input{
 
 }
 .skills{
-    height: 300px;
+    height: 400px;
     width: 90%;
     display: grid;
     grid-template-rows: 100% ;
-    grid-template-columns:50% 50% ;
+    grid-template-columns:33% 57% ;
 }
 .soft{
     display:flex;
     justify-content: center;
     align-items: center;
+}
+
+hr{
+    width: auto;
 }
 
 
