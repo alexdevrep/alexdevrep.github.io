@@ -6,7 +6,7 @@
     margin:0%;
 }
 header{
-    background-color: #7f02fc;
+    background-color:  #6c02fc ;
     display: grid;
     grid-template-columns: 20% 20% 20% 20% 20%;
     grid-template-rows: 100%;
@@ -14,26 +14,56 @@ header{
     
     width: auto;
 }
-h1{
-    height: 50px;
-}
-p{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 150px;
-    width: 400px;
-}
-footer{
-    height: 250px;
-    background-color:#7f02fc;
-}
 
-div{
+.header{
     display:flex;
     justify-content: center;
     align-items: center;
-    background-color:#7f02fc ;
+    background-color: #6c02fc  ;
 }
+
+.Aboutme{
+    height: 400px;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 50% 50%
+}
+
+h1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.botones{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+span{
+    width: 10px;
+}
+
+input{
+    height: 50px;
+    width: 150px;
+    border-radius: 20px;
+    background-color: #6c02fc;
+    border-color: #6c02fc;
+}
+
+.exp{
+    height: 100px;
+}
+    
+
+
+footer{
+    height: 250px;
+    background-color: #6c02fc ;
+}
+
+
+
 
 
