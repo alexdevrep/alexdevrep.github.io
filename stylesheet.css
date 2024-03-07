@@ -10,7 +10,7 @@ header{
     display: grid;
     grid-template-columns: 20% 20% 20% 20% 20%;
     grid-template-rows: 100%;
-    height: 50px;
+    height: auto;
     
     width: auto;
 }
@@ -23,7 +23,7 @@ header{
 }
 
 .Aboutme{
-    height: 400px;
+    height: auto;
     width: 90%;
     display: grid;
     grid-template-columns: 50% 50%;
@@ -46,7 +46,7 @@ span{
 }
 
 input{
-    height: 50px;
+    height: auto;
     width: 150px;
     border-radius: 20px;
     background-color: #9b51e0;
@@ -56,7 +56,7 @@ input{
 
 
 .exp{
-    height: 400px;
+    height: auto;
     width: 90%;
     display: grid;
     grid-template-rows: 100%;
@@ -71,7 +71,7 @@ input{
 
 }
 .skills{
-    height: 400px;
+    height: auto;
     width: 90%;
     display: grid;
     grid-template-rows: 100% ;
@@ -90,7 +90,8 @@ hr{
 
 
 footer{
-    height: 250px;
+    height: auto;
+    width: 100%;
     background-color: #9b51e0 ;
 }
 
