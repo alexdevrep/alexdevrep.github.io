@@ -12,6 +12,10 @@
     .dropdown-menu .nav-link:hover {
       background-color: #343a40 !important;
     }
+    .bi:hover {
+      background-color: pink;
+      width: 10rem;
+    }
 
   </style>
   
@@ -20,10 +24,13 @@
 <body>
 
   <header class="d-flex" style="position:fixed;top: 0px; z-index: 2;" >
-    <div class="bg-dark d-flex justify-content-around" style="width:100vw;">
-      <div class="dropdown">
-        <div class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" style="color:#F8F9FA;">
-          Guía
+    <div class="bg-dark d-flex justify-content-end" style="width:100vw;">
+      <div>
+        <i class="bi bi-brightness-high-fill" style="font-size: 2rem; color:#F8F9FA;"></i>
+      </div>
+      <aside class="dropdown">
+        <div class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <img src="/svg/menu_blanco.svg" alt="menu" style="width:2rem;">
         </div>
         
         <ul class=" dropdown-menu bg-dark ">
@@ -43,7 +50,7 @@
             <a class="nav-link fw-bold dropdown-item" href="#formacion" style="color:#F8F9FA;">Formación Académica</a>
           </li>
         </ul>
-      </div>
+      </aside>
     </div>
     
     
