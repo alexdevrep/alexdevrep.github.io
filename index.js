@@ -116,16 +116,15 @@ const pcf8574= new Proyectos(
 //Array para las instancias
 const listaProyectos=[expansorESP8266,kicadCrud,blogWordpress,pcf8574,paletizador,atajosTeclado,]
 //Botón para ver los proyectos 
-$(document).ready(()=>{
+$(document).ready(() => {
     $('.card').click(function(event) {
-        event.preventDefault()
+        event.preventDefault();
         const id = $(this).closest('.card').attr('id');
         
-        //Generamos la descripción detallada en base al proyecto seleccionado
-        listaProyectos.forEach(function(proyecto,indice){
-            if(id == indice){
-                
-                //Generamos el HTML dinámico con la información detallada de los proyectos
+        // Generamos la descripción detallada en base al proyecto seleccionado
+        listaProyectos.forEach(function(proyecto, indice) {
+            if (id == indice) {
+                // Generamos el HTML dinámico con la información detallada de los proyectos
                 const proyectoDetalle =
                 `<div class="p-5 mb-4 bg-light rounded-3">
                     <div class="container-fluid py-5">
@@ -133,7 +132,7 @@ $(document).ready(()=>{
                         <h2 class="display-5 fw-bold">${proyecto.getTitulo()}</h2>
                         <p>${proyecto.getDescripcion()}</p>
                         <hr>
-                        <p class ="fw-bold">Tecnologías Utilizadas</p>
+                        <p class="fw-bold">Tecnologías Utilizadas</p>
                         <ul>
                             <li>
                                 <img src="${proyecto.getTecnologias(0)}" alt="Bootstrap" style="width:4rem;">
@@ -144,12 +143,17 @@ $(document).ready(()=>{
                         <a href="https://github.com/alexdevrep" target="_blank" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Mi GitHub">
                             <button class="btn btn-secondary bg-dark">Ver proyecto en GitHub</button>
                         </a>
+                        <button class="btn btn-secondary bg-dark" onclick="closeModal()">cerrar proyecto</button>
                     </div>
-                </div>`
-                $('#proyectoDetalle').html(proyectoDetalle).show()
+                </div>`;
+                $('#proyectoDetalle').html(proyectoDetalle);
+                $('#modal').show();
             }
         })
-        
-    })
-    
+    });
 })
+
+function closeModal() {
+    $('#modal').hide()
+}
+
