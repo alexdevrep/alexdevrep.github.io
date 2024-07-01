@@ -50,8 +50,20 @@ class Proyectos{
         return this.#descripcion
     }
 
-    getTecnologias(index) {
-        return this.#tecnologias[index]
+    getTecnologias() {
+         //Generamos los elementos de la lista de tecnologías
+         const tecnologias = this.#tecnologias
+         let tecnologiasUsadas=''
+         Object.keys(tecnologias).forEach(clave=>{
+             tecnologiasUsadas +=
+             `
+                <a href="https://developer.mozilla.org/en-US/" target="_blank" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="${clave}">
+                    <img src="${tecnologias[clave]}" alt="${clave}" style="width:4rem;">
+                </a>
+                 
+             `
+         })
+        return tecnologiasUsadas
     }
 
     getEnlaces() {
@@ -74,7 +86,7 @@ const expansorESP8266= new Proyectos(
     El proyecto incluye el diseño del hardware necesario para la expansión, la configuración del ESP8266 para comunicarse con los componentes adicionales,
     y la programación del firmware para gestionar las nuevas entradas y salidas.
     `,
-    ['./svg/arduino.svg','./svg/arduino.svg'],
+    {'arduino':'./svg/arduino.svg','linux':'./svg/linux.svg'},
     {github: 'https://github.com/alexdevrep'}
 )
 const paletizador= new Proyectos(
@@ -118,8 +130,8 @@ const listaProyectos=[expansorESP8266,kicadCrud,blogWordpress,pcf8574,paletizado
 //Botón para ver los proyectos 
 $(document).ready(() => {
     $('.card').click(function(event) {
-        event.preventDefault();
-        const id = $(this).closest('.card').attr('id');
+        event.preventDefault()
+        const id = $(this).closest('.card').attr('id')
         
         // Generamos la descripción detallada en base al proyecto seleccionado
         listaProyectos.forEach(function(proyecto, indice) {
@@ -135,8 +147,10 @@ $(document).ready(() => {
                         <p class="fw-bold">Tecnologías Utilizadas</p>
                         <ul>
                             <li>
-                                <img src="${proyecto.getTecnologias(0)}" alt="Bootstrap" style="width:4rem;">
+                                ${proyecto.getTecnologias()}
                             </li>
+                            
+                            
                         </ul>
                         <hr>
                         
@@ -145,12 +159,17 @@ $(document).ready(() => {
                         </a>
                         <button class="btn btn-secondary bg-dark" onclick="closeModal()">cerrar proyecto</button>
                     </div>
-                </div>`;
-                $('#proyectoDetalle').html(proyectoDetalle);
-                $('#modal').show();
+                </div>`
+                $('#proyectoDetalle').html(proyectoDetalle)
+                $('#modal').show()
+                 // Inicializamos los tooltips de Bootstrap
+                 var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+                 var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+                     return new bootstrap.Tooltip(tooltipTriggerEl)
+                 })
             }
         })
-    });
+    })
 })
 
 function closeModal() {
