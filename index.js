@@ -57,7 +57,7 @@ class Proyectos{
          Object.keys(tecnologias).forEach(clave=>{
              tecnologiasUsadas +=
              `
-                <a href="https://developer.mozilla.org/en-US/" target="_blank" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="${clave}">
+                <a href="#" target="_blank" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="${clave}">
                     <img src="${tecnologias[clave]}" alt="${clave}" style="width:4rem;">
                 </a>
                  
@@ -74,59 +74,89 @@ class Proyectos{
 //Objetos de los proyectos
 const expansorESP8266= new Proyectos(
     'Expansor I/O ESP8266',
-    './imagenes/expansorESP8266.jpg',
+    './imagenes/expansorESP8266.webp',
     `
-    Este proyecto tiene como objetivo aumentar la cantidad de entradas y salidas, tanto analógicas como digitales, de un microcontrolador ESP8266. 
-    El ESP8266 es un potente módulo Wi-Fi ampliamente utilizado en aplicaciones de IoT (Internet de las Cosas) debido a su capacidad de conexión inalámbrica y su versatilidad. 
-    Sin embargo, su número limitado de pines de entrada y salida puede ser una limitación para proyectos más complejos.
-
-    Para superar esta limitación, se implementa un sistema de expansión utilizando componentes adicionales como multiplexores, 
-    expansores de E/S (por ejemplo, PCF8574 para E/S digitales y el 74HC4067 para E/S analógicas) 
-
-    El proyecto incluye el diseño del hardware necesario para la expansión, la configuración del ESP8266 para comunicarse con los componentes adicionales,
-    y la programación del firmware para gestionar las nuevas entradas y salidas.
+    Este proyecto amplía las entradas y salidas del microcontrolador ESP8266,
+    un módulo Wi-Fi popular en aplicaciones IoT, superando sus limitaciones de pines. 
+    Utiliza componentes como el PCF8574 para E/S digitales y el 74HC4067 para E/S analógicas. 
+    Incluye el diseño del hardware necesario, la configuración del ESP8266 para comunicarse 
+    con estos componentes adicionales y la programación del firmware para gestionar las nuevas entradas y salidas. 
+    Este sistema de expansión permite el desarrollo de proyectos más complejos y versátiles.
     `,
-    {'arduino':'./svg/arduino.svg','linux':'./svg/linux.svg'},
+    {'arduino':'./svg/arduino.svg'},
     {github: 'https://github.com/alexdevrep'}
 )
 const paletizador= new Proyectos(
     'Paletizador de cajas',
-    './imagenes/expansorESP8266.jpg',
-    'Hola mundo esto es una prueba aqui explicamos el paletizador',
-    ['./svg/arduino.svg','./svg/arduino.svg'],
+    '',
+    `
+    He desarrollado un proyecto de automatización para un paletizador de cajas utilizando OpenPLC, Factory I/O y el lenguaje Ladder.
+    Este proyecto simula y controla el proceso de apilamiento de cajas en palets de manera eficiente y precisa. 
+    Utilizando OpenPLC para la programación del controlador lógico programable y Factory I/O para la simulación del entorno industrial, 
+    he creado un sistema que optimiza el flujo de trabajo y garantiza la correcta disposición de las cajas. 
+    Este proyecto evidencia mi habilidad en la automatización industrial, programación en lenguaje Ladder y uso de herramientas avanzadas para la simulación y control de procesos industriales.
+    `,
+    {'arduino':'./svg/arduino.svg','linux':'./svg/linux.svg'},
     {github: 'https://github.com/alexdevrep'}
 )
 const blogWordpress= new Proyectos(
     'Blog sobre electrónica y Programación',
-    './imagenes/expansorESP8266.jpg',
-    'Hola mundo esto es una prueba aqui explicamos el blog de wordpress',
-    ['./svg/arduino.svg','./svg/arduino.svg'],
+    '',
+    `
+    Bienvenido a mi blog de WordPress, donde exploro el fascinante mundo de la electrónica y la programación.
+    Aquí encontrarás tutoriales detallados, proyectos innovadores y consejos prácticos para entusiastas y profesionales. 
+    Desde la programación de microcontroladores y el diseño de circuitos electrónicos hasta el desarrollo de aplicaciones web y la automatización industrial, 
+    comparto mis conocimientos y experiencias para ayudarte a expandir tus habilidades. 
+    Mi objetivo es crear una comunidad donde podamos aprender y crecer juntos en estos campos apasionantes.
+    ¡Únete y descubre todo lo que puedes lograr con la electrónica y la programación!
+    `,
+    {'WordPress':'./svg/wordpress.svg','mySQL':'./svg/mysql.svg','php':'./svg/php.svg'},
     {github: 'https://github.com/alexdevrep'}
 )
 const kicadCrud= new Proyectos(
     'CRUD de footprints y modelos 3D para KiCaD',
-    './imagenes/expansorESP8266.jpg',
-    'Hola mundo esto es una prueba aqui explicamos el crud para kicad',
-    ['./svg/arduino.svg','./svg/arduino.svg'],
+    '',
+    `
+    Aplicación CRUD con Laravel para gestionar rutas de huellas y modelos 3D de componentes para KiCad.
+    La aplicación permite a los usuarios almacenar, actualizar, visualizar y eliminar registros de huellas de PCB y sus correspondientes modelos 3D, 
+    facilitando la organización y acceso a estos recursos.
+    Además, la interfaz intuitiva y funcionalidad robusta de la aplicación garantizan una experiencia de usuario fluida y eficiente. 
+    Este proyecto demuestra mi capacidad para construir aplicaciones web complejas y mi habilidad en la utilización de Laravel 
+    para resolver problemas específicos en el ámbito del diseño electrónico.
+    `,
+    {'mySQL':'./svg/mysql.svg','bootstrap':'./svg/bootstrap.svg','laravel':'./svg/laravel-svgrepo-com.svg'},
     {github: 'https://github.com/alexdevrep'}
 )
 const atajosTeclado= new Proyectos(
     'Atajos de teclado personalizados',
-    './imagenes/expansorESP8266.jpg',
-    'Hola mundo esto es una prueba aqui explicamos los atajos de teclado',
-    ['./svg/arduino.svg','./svg/arduino.svg'],
+    '',
+    `
+    He desarrollado un proyecto open source utilizando FastAPI que permite a los usuarios crear y gestionar atajos de teclado personalizados. 
+    El teclado está controlado por un microcontrolador programado en C/C++ que se comunica con la computadora mediante el protocolo I2C.
+    Esta aplicación facilita la configuración de combinaciones de teclas para realizar diversas acciones de manera rápida y eficiente. 
+    Con una interfaz intuitiva y un backend robusto, los usuarios pueden definir, modificar y eliminar atajos de teclado según sus necesidades. 
+    Este proyecto demuestra mi habilidad en el uso de FastAPI para construir aplicaciones web modernas,
+    mi habilidad para la programación de sistemas embebidos y mi compromiso con la creación de herramientas útiles y accesibles para mejorar la productividad.
+    `,
+    {'arduino':'./svg/arduino.svg','fastAPI':'./svg/fastapi-svgrepo-com.svg'},
     {github: 'https://github.com/alexdevrep'}
 )
-const pcf8574= new Proyectos(
+const portatil= new Proyectos(
     'Mi propio ordenador Portátil',
-    './imagenes/expansorESP8266.jpg',
-    'Hola mundo esto es una prueba aqui explicamos el pcf8574',
-    ['./svg/arduino.svg','./svg/arduino.svg'],
+    '',
+    `
+    Estoy desarrollando mi propio ordenador portátil utilizando una Orange Pi y una tablet antigua, conectadas mediante escritorio remoto. 
+    Este proyecto combina hardware accesible y software eficiente para crear un dispositivo portátil funcional y personalizado. 
+    La Orange Pi actúa como el núcleo del sistema, gestionando las operaciones principales, mientras que la tablet proporciona una interfaz de usuario intuitiva y portátil. 
+    Todo ello alimentado con baterías de litio que cuentan con su propio sistema de gestión que impiden su deterioro a corto plazo.
+    Al utilizar el escritorio remoto, he optimizado la comunicación y el rendimiento entre ambos dispositivos, demostrando mi habilidad en la integración de hardware y software para crear soluciones innovadoras y prácticas
+    `,
+    {'arduino':'./svg/arduino.svg','linux':'./svg/linux.svg'},
     {github: 'https://github.com/alexdevrep'}
 )
 
 //Array para las instancias
-const listaProyectos=[expansorESP8266,kicadCrud,blogWordpress,pcf8574,paletizador,atajosTeclado,]
+const listaProyectos=[expansorESP8266,kicadCrud,blogWordpress,portatil,paletizador,atajosTeclado,]
 //Botón para ver los proyectos 
 $(document).ready(() => {
     $('.card').click(function(event) {
@@ -138,26 +168,27 @@ $(document).ready(() => {
             if (id == indice) {
                 // Generamos el HTML dinámico con la información detallada de los proyectos
                 const proyectoDetalle =
-                `<div class="p-5 mb-4 bg-light rounded-3">
-                    <div class="container-fluid py-5">
-                        <img src="${proyecto.getImg()}" alt="imagen del proyecto" class="card-img-top">
+                `<div class="p-3 mb-4 bg-light rounded-3">
+                    <div class="container-fluid py-2">
                         <h2 class="display-5 fw-bold">${proyecto.getTitulo()}</h2>
-                        <p>${proyecto.getDescripcion()}</p>
-                        <hr>
-                        <p class="fw-bold">Tecnologías Utilizadas</p>
-                        <ul>
-                            <li>
-                                ${proyecto.getTecnologias()}
-                            </li>
-                            
-                            
-                        </ul>
-                        <hr>
-                        
-                        <a href="https://github.com/alexdevrep" target="_blank" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Mi GitHub">
-                            <button class="btn btn-secondary bg-dark">Ver proyecto en GitHub</button>
-                        </a>
-                        <button class="btn btn-secondary bg-dark" onclick="closeModal()">cerrar proyecto</button>
+                        <div class="container-fluid py-2 d-flex">
+                            <img src="${proyecto.getImg()}" alt="imagen del proyecto" class="img-fluid rounded" style="max-width:20%; height:auto;">
+                            <div class="container-fluid py-2">
+                                <p class="mx-5">${proyecto.getDescripcion()}</p>
+                                <hr class="mx-5">
+                                <p class="fw-bold mx-5">Tecnologías Utilizadas</p>
+                                <div class="mx-5"> 
+                                    ${proyecto.getTecnologias()}
+                                </div>
+                                <hr class="mx-5">
+                                <div class="mx-5">
+                                    <a href="https://github.com/alexdevrep" target="_blank">
+                                        <button class="btn btn-secondary bg-dark ">Ver proyecto en GitHub</button>
+                                    </a>
+                                    <button class="btn btn-secondary bg-dark" onclick="closeModal()">cerrar proyecto</button>
+                                </div>
+                            </div>                           
+                        </div>
                     </div>
                 </div>`
                 $('#proyectoDetalle').html(proyectoDetalle)
