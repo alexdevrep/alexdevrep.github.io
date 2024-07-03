@@ -172,20 +172,24 @@ $(document).ready(() => {
                     <div class="container-fluid py-2">
                         <h2 class="display-5 fw-bold">${proyecto.getTitulo()}</h2>
                         <div class="container-fluid py-2 d-flex">
-                            <img src="${proyecto.getImg()}" alt="imagen del proyecto" class="img-fluid rounded" style="max-width:20%; height:auto;">
-                            <div class="container-fluid py-2">
-                                <p class="mx-5">${proyecto.getDescripcion()}</p>
-                                <hr class="mx-5">
-                                <p class="fw-bold mx-5">Tecnologías Utilizadas</p>
-                                <div class="mx-5"> 
+                            <div id ="imagen" class="container-fluid py-2">
+                                <img src="${proyecto.getImg()}" alt="imagen del proyecto" class="img-fluid rounded">
+                            </div>
+                            
+                            <div class="container-fluid">
+                                <p>${proyecto.getDescripcion()}</p>
+                                <hr>
+                                <p class="fw-bold iconos">Tecnologías Utilizadas</p>
+                                <div class="iconos"> 
                                     ${proyecto.getTecnologias()}
                                 </div>
-                                <hr class="mx-5">
-                                <div class="mx-5">
-                                    <a href="https://github.com/alexdevrep" target="_blank">
-                                        <button class="btn btn-secondary bg-dark ">Ver proyecto en GitHub</button>
+                                <hr>
+                                <div class="container-fluid d-flex botones" style="display:flex; justify-content:center; align-items:center; padding-top:1.4rem">
+                                    <a href="https://github.com/alexdevrep" target="_blank" class="btn btn-secondary bg-dark btn-sm ">
+                                        Ver en GitHub
                                     </a>
-                                    <button class="btn btn-secondary bg-dark" onclick="closeModal()">cerrar proyecto</button>
+                                    <span style="width:1rem;"></span>
+                                    <button class="btn btn-secondary bg-dark btn-sm" onclick="closeModal()">Cerrar proyecto</button>                       
                                 </div>
                             </div>                           
                         </div>
