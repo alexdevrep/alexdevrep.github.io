@@ -13,10 +13,6 @@
     .dropdown-menu .nav-link:hover {
       background-color: #343a40 !important;
     }
-    .bi:hover {
-      background-color: pink;
-      width: 10rem;
-    }
     .modal {
       display: none; /* Oculto por defecto */
       position: fixed; /* Fijo en la pantalla */
@@ -36,7 +32,7 @@
     border: 1px solid #888;
     width: 80%; /* Ancho del contenido del modal */
   }
-
+  
   .close-button {
     color: #aaa;
     float:right;
@@ -93,6 +89,10 @@
       height: auto;
     }
   }
+  .card{
+    cursor: pointer;
+  }
+ 
 
   </style>
   
@@ -226,9 +226,9 @@
                 <img src="./imagenes/expansorESP8266.webp" class="card-img-top" alt="...">
                 <div class="card-body">
                     <h5 class="card-title">Expansor I/O ESP8266</h5>
-                    <p class="card-text">
-                        Explicación del proyecto
-                    </p>
+                      <p class="card-text">
+                        Ver Proyecto ->
+                      </p>
                 </div>
             </div>
         </div>
@@ -238,7 +238,7 @@
                 <div class="card-body">
                     <h5 class="card-title">Aplicación CRUD KiCAD</h5>
                     <p class="card-text">
-                        Explicación del proyecto
+                      Ver Proyecto ->
                     </p>
                     
                 </div>
@@ -250,7 +250,7 @@
                 <div class="card-body">
                     <h5 class="card-title">Mi blog de WordPress</h5>
                     <p class="card-text">
-                        Explicación del proyecto
+                      Ver Proyecto ->
                     </p>           
                 </div>
             </div>
@@ -274,8 +274,8 @@
               <div class="card-body">
                   <h5 class="card-title">Laptop DIY con Orange Pi y Tablet</h5>
                   <p class="card-text">
-                      Explicación del proyecto
-                  </p>          
+                    Ver Proyecto ->
+                  </p>         
               </div>
           </div>
       </div>
@@ -285,7 +285,7 @@
               <div class="card-body">
                   <h5 class="card-title">Paletizador de cajas</h5>
                   <p class="card-text">
-                      Explicación del proyecto
+                    Ver Proyecto ->
                   </p>                  
               </div>
           </div>
@@ -296,8 +296,8 @@
               <div class="card-body">
                   <h5 class="card-title">Teclado de atajos personalizados</h5>
                   <p class="card-text">
-                      Explicación del proyecto
-                  </p>
+                    Ver Proyecto ->
+                  </p>  
               </div>
           </div>
       </div>
@@ -338,10 +338,16 @@
         Si has llegado hasta aquí te invito a que te pongas 
         en contacto conmigo a través de mi correo electrónico
       </p>
-      <button class="btn btn-secondary btn-sm bg-dark">
-        <a class="nav-link" href="#sobreMi" style="color:#F8F9FA;">Volver al inicio</a>
-      </button>
-      <button class="btn btn-secondary btn-sm bg-dark">Descargar CV</button>
+      <div class="email " >
+        <p class="d-flex" style="background-color:#343a40; color:#F8F9FA; border:solid 1px; border-radius: 0.3rem; border-color: #343a40; padding: 0.2rem; width: 14rem;">
+          alexdevrep@gmail.com
+          <a  data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Copiar">
+            <img src="./svg/clipboard.svg" alt="clipboard" style="margin-left: 0.7rem;">
+          </a>
+        </p>
+        
+          
+      </div>      
     </div>
   </div>
 </div>
