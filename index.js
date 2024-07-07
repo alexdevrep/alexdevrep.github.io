@@ -205,9 +205,16 @@ $(document).ready(() => {
             }
         })
     })
+    
 })
 
 function closeModal() {
     $('#modal').hide()
+}
+function copiar(){
+    let texto = "alexdevrep@gmail.com"
+    navigator.clipboard.writeText(texto)
+    $('.copiar').hide()
+    $('.copyCheck').show()
 }
 
