@@ -32,6 +32,21 @@
     border: 1px solid #888;
     width: 80%; /* Ancho del contenido del modal */
   }
+  .night {
+    color: #aaa;
+    float:right;
+    font-size: 28px;
+    font-weight: bold;
+    display:flex;
+    justify-content: flex-end;
+  }
+  .night:hover,
+  .night:focus {
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+    
+  }
   
   .close-button {
     color: #aaa;
@@ -49,6 +64,7 @@
     cursor: pointer;
     
   }
+  
   #proyectoDetalle #imagen{
       max-width: 100%;
       height: 100%;
@@ -100,10 +116,11 @@
 
 <body>
 
-  <header class="d-flex" style="position:fixed;top: 0px; z-index: 2;" >
-    <div class="bg-dark d-flex justify-content-end" style="width:100vw;">
+  <header class="d-flex" style="position:fixed;top: 0px; z-index: 2; border-bottom:solid 1px #000;" >
+    <span class="bg-dark d-flex justify-content-end" style="width:100vw;">
       <div>
-        <i class="bi bi-brightness-high-fill" style="font-size: 2rem; color:#F8F9FA;"></i>
+        <i class="bi bi-brightness-high-fill day" style="font-size: 2rem; color:#F8F9FA;" onclick="modo=darkMode(); console.log(modo);return modo"></i>
+        <i class="bi bi-moon-stars-fill night" style="font-size: 2rem; color:#F8F9FA; display:none; padding-top:0.4rem;" onclick="modo=dayMode(); console.log(modo);return modo"></i>
       </div>
       <aside class="dropdown">
         <div class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -128,10 +145,11 @@
           </li>
         </ul>
       </aside>
-    </div>
+    </span>
     
     
   </header>
+  <span class="my-3">---</span>
   <div class="container d-flex mt-5" id="sobreMi">
     <div class="bg-light p-5 rounded-3">
       <div class="container py-5">
@@ -188,16 +206,16 @@
         <h3 class="display-5 fw-bold">Tecnologías Favoritas</h3>
         <div class="col-md-1 d-flex mt-3 justify-content-around" style="width: 100%;">
           <a href="https://developer.mozilla.org/en-US/" target="_blank" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="HTML5">
-            <img src="/svg/html5.svg" alt="HTML5" style="width:4rem;">
+            <img id="html5" src="/svg/html5.svg" alt="HTML5" style="width:4rem;">
           </a>
           <a href="https://icons.getbootstrap.com/" target="_blank" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Bootstrap">
-            <img src="/svg/bootstrap.svg" alt="Bootstrap" style="width:4rem;">
+            <img id="bootstrap" src="/svg/bootstrap.svg" alt="Bootstrap" style="width:4rem;">
           </a>
           <a href="https://www.php.net/manual/es/intro-whatis.php" target="_blank" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="PHP">
-            <img src="/svg/php.svg" alt="PHP" style="width:4rem;">
+            <img id="php" src="/svg/php.svg" alt="PHP" style="width:4rem;">
           </a>
           <a href="https://www.mysql.com/" target="_blank" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="MySQL">
-            <img src="/svg/mysql.svg" alt="MySQL" style="width:4rem;">
+            <img id="mysql" src="/svg/mysql.svg" alt="MySQL" style="width:4rem;">
           </a>
 
         </div>
@@ -219,7 +237,7 @@
       </div>
     </div>
   </div>
-  <div class="container mt-3">
+  <div class="container mt-3 proyectos">
     <div class="row">
         <div  class="col-md-4 mb-3 ">
             <div id="0" class="card bg-light" style="width: 100%;">
@@ -262,11 +280,11 @@
     <div>
       <span class="close-button" onclick="closeModal()">&times;</span>
     </div>
-    <div id="proyectoDetalle"></div>
+    <div id="proyectoDetalle"class="rounded-3"></div>
     
   </div>
 </div>
-<div class="container">
+<div class="container proyectos">
   <div class="row">
       <div  class="col-md-4 mb-3 ">
           <div id="3" class="card bg-light" style="width: 100%;">
@@ -319,7 +337,7 @@
           CE Fabricación Inteligente sep/2021-jun/2022
         </li>
       </ul>
-      <h3 class="display-5 fw-bold">Otros cursos y certificaciones</h3>
+      <h4 class="display-5 fw-bold">Otros cursos y certificaciones</h4>
       <ul>
         <li>Programa Agentes del cambio (150 horas)</li>
         <li>Desarrollo de aplicaciones con Java(150 horas)</li>

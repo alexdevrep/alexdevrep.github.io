@@ -20,6 +20,53 @@ $(document).ready(()=>{
     })
 })
 
+//Modo día/noche
+function darkMode(){
+    $('.night').show()
+    $('.day').hide() 
+    $('body').css("background-color","black")
+    $('div.bg-light').toggleClass("bg-light bg-dark")
+    $(".proyectos").css("background-color", "black")
+    $('div').css({
+        "color":"white",
+    })
+    $('i').css("color","white")
+    $('div').addClass("rounded-3")
+    $('#html5').attr("src","/svg/html_white.svg")
+    $('#bootstrap').attr("src","/svg/bootstrap_white.svg")
+    $('#php').attr("src","/svg/php_white.svg")
+    $('#mysql').attr("src","/svg/mysql_white.svg")
+    $('.modal-content').css("background-color", "black")
+    $('span.close-button').toggleClass("close-button night")
+    let modo ="noche"
+    return modo
+    
+
+    
+    
+
+    
+}
+
+function dayMode(){
+    $('.night').hide()
+    $('.day').show() 
+    $('body').css("background-color","white")
+    $('div.bg-dark').toggleClass("bg-dark bg-light")
+    $('div').css("color","black")
+    $('.proyectos').css("background-color","white")
+    $('#html5').attr("src","/svg/html5.svg")
+    $('#bootstrap').attr("src","/svg/bootstrap.svg")
+    $('#php').attr("src","/svg/php.svg")
+    $('#mysql').attr("src","/svg/mysql.svg")
+    $('.modal-content').css("background-color", "white")
+    let modo ="dia"
+    return modo
+    
+
+}
+let mode=
+
 /*
     Clase para crear la información de los proyectos
 */
@@ -50,20 +97,37 @@ class Proyectos{
         return this.#descripcion
     }
 
-    getTecnologias() {
+    getTecnologias(modo) {
          //Generamos los elementos de la lista de tecnologías
          const tecnologias = this.#tecnologias
          let tecnologiasUsadas=''
-         Object.keys(tecnologias).forEach(clave=>{
-             tecnologiasUsadas +=
-             `
-                <a href="#" target="_blank" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="${clave}">
-                    <img src="${tecnologias[clave]}" alt="${clave}" style="width:4rem;">
-                </a>
-                 
-             `
-         })
-        return tecnologiasUsadas
+         if(modo ==="noche"){
+            Object.keys(tecnologias).forEach(clave=>{
+                tecnologiasUsadas +=
+                `
+                   <a href="#" target="_blank" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="${clave}">
+                       <img src="${tecnologias[clave]+"_white.svg"}" alt="${clave}" style="width:4rem;">
+                   </a>
+                    
+                `
+                
+            })
+           return tecnologiasUsadas
+           
+         }else if(modo==="dia" || modo===undefined) {
+            Object.keys(tecnologias).forEach(clave=>{
+                tecnologiasUsadas +=
+                `
+                   <a href="#" target="_blank" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="${clave}">
+                       <img src="${tecnologias[clave]+".svg"}" alt="${clave}" style="width:4rem;">
+                   </a>
+                    
+                `
+            })
+           return tecnologiasUsadas
+
+         }
+         
     }
 
     getEnlaces() {
@@ -83,7 +147,7 @@ const expansorESP8266= new Proyectos(
     con estos componentes adicionales y la programación del firmware para gestionar las nuevas entradas y salidas. 
     Este sistema de expansión permite el desarrollo de proyectos más complejos y versátiles.
     `,
-    {'arduino':'./svg/arduino.svg'},
+    {'arduino':'./svg/arduino'},
     {github: 'https://github.com/alexdevrep'}
 )
 const paletizador= new Proyectos(
@@ -96,7 +160,7 @@ const paletizador= new Proyectos(
     he creado un sistema que optimiza el flujo de trabajo y garantiza la correcta disposición de las cajas. 
     Este proyecto evidencia mi habilidad en la automatización industrial, programación en lenguaje Ladder y uso de herramientas avanzadas para la simulación y control de procesos industriales.
     `,
-    {'arduino':'./svg/arduino.svg','linux':'./svg/linux.svg'},
+    {'OpenPLC':'./svg/openPLC','factory I/O':'./svg/FactoryIO'},
     {github: 'https://github.com/alexdevrep'}
 )
 const blogWordpress= new Proyectos(
@@ -110,7 +174,7 @@ const blogWordpress= new Proyectos(
     Mi objetivo es crear una comunidad donde podamos aprender y crecer juntos en estos campos apasionantes.
     ¡Únete y descubre todo lo que puedes lograr con la electrónica y la programación!
     `,
-    {'WordPress':'./svg/wordpress.svg','mySQL':'./svg/mysql.svg','php':'./svg/php.svg'},
+    {'WordPress':'./svg/wordpress','mySQL':'./svg/mysql','php':'./svg/php'},
     {github: 'https://github.com/alexdevrep'}
 )
 const kicadCrud= new Proyectos(
@@ -124,7 +188,7 @@ const kicadCrud= new Proyectos(
     Este proyecto demuestra mi capacidad para construir aplicaciones web complejas y mi habilidad en la utilización de Laravel 
     para resolver problemas específicos en el ámbito del diseño electrónico.
     `,
-    {'mySQL':'./svg/mysql.svg','bootstrap':'./svg/bootstrap.svg','laravel':'./svg/laravel-svgrepo-com.svg'},
+    {'mySQL':'./svg/mysql','bootstrap':'./svg/bootstrap','laravel':'./svg/laravel-svgrepo-com'},
     {github: 'https://github.com/alexdevrep'}
 )
 const atajosTeclado= new Proyectos(
@@ -138,7 +202,7 @@ const atajosTeclado= new Proyectos(
     Este proyecto demuestra mi habilidad en el uso de FastAPI para construir aplicaciones web modernas,
     mi habilidad para la programación de sistemas embebidos y mi compromiso con la creación de herramientas útiles y accesibles para mejorar la productividad.
     `,
-    {'arduino':'./svg/arduino.svg','fastAPI':'./svg/fastapi-svgrepo-com.svg'},
+    {'arduino':'./svg/arduino','fastAPI':'./svg/fastapi-svgrepo-com'},
     {github: 'https://github.com/alexdevrep'}
 )
 const portatil= new Proyectos(
@@ -151,7 +215,7 @@ const portatil= new Proyectos(
     Todo ello alimentado con baterías de litio que cuentan con su propio sistema de gestión que impiden su deterioro a corto plazo.
     Al utilizar el escritorio remoto, he optimizado la comunicación y el rendimiento entre ambos dispositivos, demostrando mi habilidad en la integración de hardware y software para crear soluciones innovadoras y prácticas
     `,
-    {'arduino':'./svg/arduino.svg','linux':'./svg/linux.svg'},
+    {'arduino':'./svg/arduino','linux':'./svg/linux'},
     {github: 'https://github.com/alexdevrep'}
 )
 
@@ -168,7 +232,7 @@ $(document).ready(() => {
             if (id == indice) {
                 // Generamos el HTML dinámico con la información detallada de los proyectos
                 const proyectoDetalle =
-                `<div class="p-3 mb-4 bg-light rounded-3">
+                `<div class="p-3 mb-4 rounded-3">
                     <div class="container-fluid py-2">
                         <h2 class="display-5 fw-bold">${proyecto.getTitulo()}</h2>
                         <div class="container-fluid py-2 d-flex">
@@ -216,5 +280,11 @@ function copiar(){
     navigator.clipboard.writeText(texto)
     $('.copiar').hide()
     $('.copyCheck').show()
+    setTimeout(function(){
+        $('.copiar').show()
+        $('.copyCheck').hide() 
+    },2500)
 }
+
+
 
