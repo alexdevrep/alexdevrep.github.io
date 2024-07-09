@@ -70,6 +70,23 @@
       height: 100%;
     }
   
+  body {
+    background-color: white;
+    color: black;
+  }
+  body.dark-mode{
+    background-color: black;
+    color: white;
+  }
+  .iconos img {
+    filter: invert(0%); /* Color inicial del SVG */
+}
+
+body.dark-mode .iconos img {
+    filter: invert(100%); /* Color del SVG en modo oscuro */
+}
+
+  
 
   @media(max-width:1600px){
     #proyectoDetalle div{
@@ -119,8 +136,8 @@
   <header class="d-flex" style="position:fixed;top: 0px; z-index: 2; border-bottom:solid 1px #000;" >
     <span class="bg-dark d-flex justify-content-end" style="width:100vw;">
       <div>
-        <i class="bi bi-brightness-high-fill day" style="font-size: 2rem; color:#F8F9FA;" onclick="modo=darkMode(); console.log(modo);return modo"></i>
-        <i class="bi bi-moon-stars-fill night" style="font-size: 2rem; color:#F8F9FA; display:none; padding-top:0.4rem;" onclick="modo=dayMode(); console.log(modo);return modo"></i>
+        <i class="bi bi-brightness-high-fill day" style="font-size: 2rem; color:#F8F9FA;" onclick="modo=darkMode()"></i>
+        <i class="bi bi-moon-stars-fill night" style="font-size: 2rem; color:#F8F9FA; display:none; padding-top:0.4rem;" onclick="modo=dayMode()"></i>
       </div>
       <aside class="dropdown">
         <div class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -363,7 +380,7 @@
             <img class="copiar" src="./svg/copiar.svg" alt="clipboard" style="margin-left: 0.7rem;" onclick="copiar()">
             
           </a>
-          <a data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="¡Copiado en el portapapeles!">
+          <a data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="¡Copiado!">
             <img class="copyCheck" src="./svg/copiado.svg" alt="copyCheck" style="display: none; margin-left: 0.7rem;">
           </a>
         </p>

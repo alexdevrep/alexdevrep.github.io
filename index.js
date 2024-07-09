@@ -38,8 +38,7 @@ function darkMode(){
     $('#mysql').attr("src","/svg/mysql_white.svg")
     $('.modal-content').css("background-color", "black")
     $('span.close-button').toggleClass("close-button night")
-    let modo ="noche"
-    return modo
+    $('body').toggleClass('dark-mode')
     
 
     
@@ -60,12 +59,11 @@ function dayMode(){
     $('#php').attr("src","/svg/php.svg")
     $('#mysql').attr("src","/svg/mysql.svg")
     $('.modal-content').css("background-color", "white")
-    let modo ="dia"
-    return modo
+    
     
 
 }
-let mode=
+
 
 /*
     Clase para crear la información de los proyectos
@@ -97,25 +95,11 @@ class Proyectos{
         return this.#descripcion
     }
 
-    getTecnologias(modo) {
+    getTecnologias() {
          //Generamos los elementos de la lista de tecnologías
          const tecnologias = this.#tecnologias
          let tecnologiasUsadas=''
-         if(modo ==="noche"){
-            Object.keys(tecnologias).forEach(clave=>{
-                tecnologiasUsadas +=
-                `
-                   <a href="#" target="_blank" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="${clave}">
-                       <img src="${tecnologias[clave]+"_white.svg"}" alt="${clave}" style="width:4rem;">
-                   </a>
-                    
-                `
-                
-            })
-           return tecnologiasUsadas
-           
-         }else if(modo==="dia" || modo===undefined) {
-            Object.keys(tecnologias).forEach(clave=>{
+         Object.keys(tecnologias).forEach(clave=>{
                 tecnologiasUsadas +=
                 `
                    <a href="#" target="_blank" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="${clave}">
@@ -124,10 +108,7 @@ class Proyectos{
                     
                 `
             })
-           return tecnologiasUsadas
-
-         }
-         
+           return tecnologiasUsadas      
     }
 
     getEnlaces() {
