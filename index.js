@@ -20,49 +20,10 @@ $(document).ready(()=>{
     })
 })
 
-//Modo día/noche
-function darkMode(){
-    $('.night').show()
-    $('.day').hide() 
-    $('body').css("background-color","black")
-    $('div.bg-light').toggleClass("bg-light bg-dark")
-    $(".proyectos").css("background-color", "black")
-    $('div').css({
-        "color":"white",
-    })
-    $('i').css("color","white")
-    $('div').addClass("rounded-3")
-    $('#html5').attr("src","/svg/html_white.svg")
-    $('#bootstrap').attr("src","/svg/bootstrap_white.svg")
-    $('#php').attr("src","/svg/php_white.svg")
-    $('#mysql').attr("src","/svg/mysql_white.svg")
-    $('.modal-content').css("background-color", "black")
-    $('span.close-button').toggleClass("close-button night")
-    $('body').toggleClass('dark-mode')
-    
 
-    
-    
 
-    
-}
 
-function dayMode(){
-    $('.night').hide()
-    $('.day').show() 
-    $('body').css("background-color","white")
-    $('div.bg-dark').toggleClass("bg-dark bg-light")
-    $('div').css("color","black")
-    $('.proyectos').css("background-color","white")
-    $('#html5').attr("src","/svg/html5.svg")
-    $('#bootstrap').attr("src","/svg/bootstrap.svg")
-    $('#php').attr("src","/svg/php.svg")
-    $('#mysql').attr("src","/svg/mysql.svg")
-    $('.modal-content').css("background-color", "white")
-    
-    
 
-}
 
 
 /*
@@ -266,6 +227,46 @@ function copiar(){
         $('.copyCheck').hide() 
     },2500)
 }
+//Modo día/noche
+$(document).ready(function(){
+    $(".dia").click(()=>{
+    $('.noche').show()
+    $('.dia').hide() 
+    $('body').css("background-color","black")
+    $('div.bg-light').toggleClass("bg-light bg-dark")
+    $(".proyectos").css("background-color", "black")
+    $('div').css({
+        "color":"white",
+    })
+    $('i').css("color","white")
+    $('#html5').attr("src","/svg/html_white.svg")
+    $('#bootstrap').attr("src","/svg/bootstrap_white.svg")
+    $('#php').attr("src","/svg/php_white.svg")
+    $('#mysql').attr("src","/svg/mysql_white.svg")
+    $('.modal-content').css("background-color", "black")
+    $('span.close-button').toggleClass("close-button night")
+    $('body').addClass('dark-mode')
+    })
+})
+$(document).ready(function(){
+    $(".noche").click(()=>{
+    $('.noche').hide()
+    $('.dia').show() 
+    $('body').css("background-color","white")
+    $('div.bg-dark').toggleClass("bg-dark bg-light")
+    $('div').css("color","black")
+    $('.proyectos').css("background-color","white")
+    $('#html5').attr("src","/svg/html5.svg")
+    $('#bootstrap').attr("src","/svg/bootstrap.svg")
+    $('#php').attr("src","/svg/php.svg")
+    $('#mysql').attr("src","/svg/mysql.svg")
+    $('.modal-content').css("background-color", "white")
+    $('span.night').toggleClass("night close-button")
+    $('body').removeClass('dark-mode')
+    
+
+    })
+})
 
 
 
