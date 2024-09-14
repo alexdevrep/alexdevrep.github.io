@@ -90,11 +90,11 @@ const expansorESP8266= new Proyectos(
     Este sistema de expansión permite el desarrollo de proyectos más complejos y versátiles.
     `,
     {'arduino':'./svg/arduino'},
-    {github: 'https://github.com/alexdevrep'}
+    'https://eltallerdealexdevrep.com/category/electronica/expansor-i-o-esp8266/',
 )
 const paletizador= new Proyectos(
     'Paletizador de cajas',
-    '',
+    './imagenes/minuatura.webp',
     `
     He desarrollado un proyecto de automatización para un paletizador de cajas utilizando OpenPLC, Factory I/O y el lenguaje Ladder.
     Este proyecto simula y controla el proceso de apilamiento de cajas en palets de manera eficiente y precisa. 
@@ -103,11 +103,11 @@ const paletizador= new Proyectos(
     Este proyecto evidencia mi habilidad en la automatización industrial, programación en lenguaje Ladder y uso de herramientas avanzadas para la simulación y control de procesos industriales.
     `,
     {'OpenPLC':'./svg/openPLC','factory I/O':'./svg/FactoryIO'},
-    {github: 'https://github.com/alexdevrep'}
+    'https://eltallerdealexdevrep.com/paletizador-de-cajas-con-factory-io/',
 )
 const blogWordpress= new Proyectos(
     'Blog sobre electrónica y Programación',
-    '',
+    './imagenes/blog_wordpress.webp',
     `
     Bienvenido a mi blog de WordPress, donde exploro el fascinante mundo de la electrónica y la programación.
     Aquí encontrarás tutoriales detallados, proyectos innovadores y consejos prácticos para entusiastas y profesionales. 
@@ -117,7 +117,7 @@ const blogWordpress= new Proyectos(
     ¡Únete y descubre todo lo que puedes lograr con la electrónica y la programación!
     `,
     {'WordPress':'./svg/wordpress','mySQL':'./svg/mysql','php':'./svg/php'},
-    {github: 'https://github.com/alexdevrep'}
+    'https://eltallerdealexdevrep.com/',
 )
 const kicadCrud= new Proyectos(
     'CRUD de footprints y modelos 3D para KiCaD',
@@ -131,7 +131,7 @@ const kicadCrud= new Proyectos(
     para resolver problemas específicos en el ámbito del diseño electrónico.
     `,
     {'mySQL':'./svg/mysql','bootstrap':'./svg/bootstrap','laravel':'./svg/laravel-svgrepo-com'},
-    {github: 'https://github.com/alexdevrep'}
+    'https://github.com/alexdevrep',
 )
 const atajosTeclado= new Proyectos(
     'Atajos de teclado personalizados',
@@ -145,7 +145,7 @@ const atajosTeclado= new Proyectos(
     mi habilidad para la programación de sistemas embebidos y mi compromiso con la creación de herramientas útiles y accesibles para mejorar la productividad.
     `,
     {'arduino':'./svg/arduino','fastAPI':'./svg/fastapi-svgrepo-com'},
-    {github: 'https://github.com/alexdevrep'}
+    'https://github.com/alexdevrep',
 )
 const portatil= new Proyectos(
     'Mi propio ordenador Portátil',
@@ -158,7 +158,7 @@ const portatil= new Proyectos(
     Al utilizar el escritorio remoto, he optimizado la comunicación y el rendimiento entre ambos dispositivos, demostrando mi habilidad en la integración de hardware y software para crear soluciones innovadoras y prácticas
     `,
     {'arduino':'./svg/arduino','linux':'./svg/linux'},
-    {github: 'https://github.com/alexdevrep'}
+    'https://github.com/alexdevrep',
 )
 
 //Array para las instancias
@@ -191,8 +191,8 @@ $(document).ready(() => {
                                 </div>
                                 <hr>
                                 <div class="container-fluid d-flex botones" style="display:flex; justify-content:center; align-items:center; padding-top:1.4rem">
-                                    <a href="https://github.com/alexdevrep" target="_blank" class="btn btn-secondary bg-dark btn-sm ">
-                                        Ver en GitHub
+                                    <a href="${proyecto.getEnlaces()}" target="_blank" class="btn btn-secondary bg-dark btn-sm ">
+                                        Ver documentación
                                     </a>
                                     <span style="width:1rem;"></span>
                                     <button class="btn btn-secondary bg-dark btn-sm" onclick="closeModal()">Cerrar proyecto</button>                       
